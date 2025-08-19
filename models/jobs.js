@@ -17,12 +17,12 @@ const jobs = sequelize.define(
       allowNull: false,
     },
     keywordId: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
   {
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
   }
 );

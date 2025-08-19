@@ -1,13 +1,18 @@
 import { DataTypes } from "sequelize";
 import sequelize from "./../db/db.js";
-import jobs from "./jobs.js";  // Import jobs after it is defined
+import jobs from "./jobs.js";
 
 const Keyword = sequelize.define(
   "Keyword",
   {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true
+    },
+    ChannelId: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     keyword: {
       type: DataTypes.STRING,
@@ -20,7 +25,7 @@ const Keyword = sequelize.define(
     },
   },
   {
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
   }
 );

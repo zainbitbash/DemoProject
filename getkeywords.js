@@ -4,3 +4,4 @@ export default async function getkeywords(page) {
   );
   return keywords;
 }
+

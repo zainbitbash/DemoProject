@@ -4,7 +4,7 @@ import { pathToFileURL } from "url";
 // import jobs from "../models/jobs.js";
 
 
-const sequelize = new Sequelize("upworkjobs", "root", "dodge2018", {
+const sequelize = new Sequelize("upworkjobs", "root", "bitbash123", {
   host: "localhost", 
   dialect: "mysql", 
   logging: false, 

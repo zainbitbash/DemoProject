@@ -15,6 +15,8 @@ async function initialize() {
       headless: false,
       args: ["--start-maximized"],
       defaultViewport: null,
+      executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe",
+      userDataDir: "C:/Users/Bitbash/AppData/Local/Google/Chrome/User Data/Default"
       // executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe",
       // userDataDir:
       //   "C:/Users/Abdullah/AppData/Local/Google/Chrome/User Data/Profile 2",
@@ -28,13 +30,14 @@ async function initialize() {
     });
     const google = await page.waitForSelector(
       '::-p-xpath(//button[span[text()="Continue with Google"]])',
-      { timeout: 120000 }
+      { timeout: 10000 }
     );
     await google.click();
     await sleep(15000);
+    
     const input = await page.waitForSelector(
       '::-p-xpath(//input[@type="password" and contains(@class, "air3-input")])',
-      { timeout: 60000 }
+      { timeout: 10000 }
     );
     await input.focus();
     await input.type("iqbal");
@@ -42,7 +45,7 @@ async function initialize() {
   } catch (error) {
     console.error('error in initialization', error.message);
   } finally{
-    await sleep(15000);
+    await sleep(5000);
     return {
       browser: browser,
       page: page,
